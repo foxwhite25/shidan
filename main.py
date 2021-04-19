@@ -2,10 +2,11 @@ from .lib import *
 from datetime import datetime
 
 qid_dict = {"今天是什么少女": 162207, "异世界转生": 587874, "性格": 567341, "马娘相性": 1059404, "卖萌": 360578, "热门测试": 000000}
+date = True  # 是否令日期影响结果（测试结果每天不一样）
 
 
 @sv.on_message()
-async def on_input_new(bot, ev):
+async def on_input_new(bot, ev, ):
     msg = ev.message.extract_plain_text()
     sender = ev.sender
     name = sender["card"] or sender["nickname"]
@@ -23,7 +24,13 @@ async def on_input_new(bot, ev):
         for uid in arr:
             info = await bot.get_group_member_info(group_id=gid, user_id=uid, no_cache=True)
             name = info["card"] or info["nickname"]
+        if date:
+            now = datetime.now()
+            rn = name + str([now.year, now.month, now.day])
+        else:
+            rn = name
         text_list, b64s = get_data(qid_dict[msg], name)
+        text_list.replace(rn, name)
         for each in b64s:
             text_list += f"[CQ:image,file={each}]\n"
         await bot.send(ev, str(text_list))
@@ -37,7 +44,13 @@ async def on_input_new(bot, ev):
         for uid in arr:
             info = await bot.get_group_member_info(group_id=gid, user_id=uid, no_cache=True)
             name = info["card"] or info["nickname"]
+        if date:
+            now = datetime.now()
+            rn = name + str([now.year, now.month, now.day])
+        else:
+            rn = name
         text_list, b64s = get_hot(top_index, name)
+        text_list.replace(rn, name)
         for each in b64s:
             text_list += f"[CQ:image,file={each}]\n"
         await bot.send(ev, str(text_list))
