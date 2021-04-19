@@ -35,7 +35,7 @@ def get_data(qid, name):
     soup = BeautifulSoup(resp.content, "html.parser")
     soup = soup.find("div", {"name": "shindanResultBlock"})
     tags = soup.findAll("img")
-    text = get_text(soup).replace("\n\n\n", "\n")
+    text = get_text(soup).replace("\n\n\n", "\n").replace('診断結果','診断結果\n')
     imgs = set(tag["src"] for tag in tags)
     img_list = []
     for each in imgs:

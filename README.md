@@ -128,7 +128,7 @@
 ## 致谢
 
 * []()<a href="https://github.com/Ice-Cirno/HoshinoBot/">Hoshino</a>
-* []()Hoshino群的纸飞机的痕迹(有需要欢迎来加个@，不知道github用户名)
+* []()<a href="https://github.com/zfjdhj/">@zfjdhj</a>
 
 
 
