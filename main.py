@@ -17,7 +17,6 @@ sv = Service("shindan", bundle="娱乐", help_=sv_help)
 @sv.on_prefix("测一测", only_to_me=True)
 async def on_input_new(bot, ev, ):
     msg = ev.message.extract_plain_text().strip()
-    print(msg)
     sender = ev.sender
     name = sender["card"] or sender["nickname"]
     if msg=='':
@@ -26,7 +25,6 @@ async def on_input_new(bot, ev, ):
     if msg in qid_dict and msg != "热门测试":
         arr = []
         for i in ev.message:
-            print(i)
             if i["type"] == "at" and i["data"]["qq"] != "all":
                 arr.append(int(i["data"]["qq"]))
         gid = ev.group_id
@@ -47,7 +45,6 @@ async def on_input_new(bot, ev, ):
         arr = []
         top_index = int(msg[4:]) if msg[4:] else 0
         for i in ev.message:
-            print(i)
             if i["type"] == "at" and i["data"]["qq"] != "all":
                 arr.append(int(i["data"]["qq"]))
         gid = ev.group_id
