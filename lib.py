@@ -2,13 +2,34 @@ from collections import Generator
 from typing import List, Callable, Dict
 import bs4
 import requests
+import os
+import json
 import hoshino
+
 from requests.structures import CaseInsensitiveDict
 from bs4 import BeautifulSoup, NavigableString, Tag
 from urllib.parse import urlencode
 
 cmds: Dict[str, Callable] = {}
-sv = hoshino.Service("shindan", bundle="pcr娱乐")
+
+configpath = os.path.join(os.path.dirname(__file__),'config.json')
+
+def save_config(config:dict):
+    try:
+        with open(configpath,'w',encoding='utf8') as f:
+            json.dump(config,f,ensure_ascii=False,indent=2)
+        return True
+    except Exception as ex:
+        print(ex)
+        return False
+
+def load_config():
+    try:
+        with open(configpath,'r',encoding='utf8') as f:
+            config = json.load(f)
+            return config
+    except:
+        return {}
 
 
 def get_data(qid, name):
