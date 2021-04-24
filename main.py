@@ -65,7 +65,7 @@ async def on_input_new(bot, ev, ):
         await bot.send(ev, '未找到该测试……使用[看看测一测列表]命令查看当前启用的测试列表~')
 
 
-@sv.on_prefix("看看测一测列表")
+@sv.on_keyword("测一测列表")
 async def check_query_dict(bot, ev, ):
     msg='当前测一测关键词列表：\n'
     for qid in qid_dict:
