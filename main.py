@@ -36,11 +36,11 @@ async def on_input_new(bot, ev, ):
             rn = name + str([now.year, now.month, now.day])
         else:
             rn = name
-        text_list, b64s = get_data(qid_dict[msg], name)
-        text_list.replace(rn, name)
+        text_list, b64s = get_data(qid_dict[msg], rn)
+        result = str(text_list.replace(rn, name))
         for each in b64s:
             text_list += f"[CQ:image,file={each}]\n"
-        await bot.send(ev, str(text_list))
+        await bot.send(ev, result)
     elif msg[:4] == "热门测试":
         arr = []
         top_index = int(msg[4:]) if msg[4:] else 0
@@ -56,11 +56,11 @@ async def on_input_new(bot, ev, ):
             rn = name + str([now.year, now.month, now.day])
         else:
             rn = name
-        text_list, b64s = get_hot(top_index, name)
-        text_list.replace(rn, name)
+        text_list, b64s = get_data(top_index, rn)
+        result = str(text_list.replace(rn, name))
         for each in b64s:
             text_list += f"[CQ:image,file={each}]\n"
-        await bot.send(ev, str(text_list))
+        await bot.send(ev, result)
     else:
         await bot.send(ev, '未找到该测试……使用[看看测一测列表]命令查看当前启用的测试列表~')
 
