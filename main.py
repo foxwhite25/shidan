@@ -59,7 +59,7 @@ async def on_input_new(bot, ev, ):
         text_list, b64s = get_data(top_index, rn)
         result = str(text_list.replace(rn, name))
         for each in b64s:
-            text_list += f"[CQ:image,file={each}]\n"
+            result += f"[CQ:image,file={each}]\n"
         await bot.send(ev, result)
     else:
         await bot.send(ev, '未找到该测试……使用[看看测一测列表]命令查看当前启用的测试列表~')
