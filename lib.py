@@ -36,21 +36,15 @@ def get_data(qid, name):
     dat = {"_token": "CdLYBZx1qiFKhbuAT4pFAHkjgAOrQk94EseZYNLx", "name": name, "hiddenName": "名無しのV"}
     data = urlencode(dat)
     headers = CaseInsensitiveDict()
-    headers["Host"] = "shindanmaker.com"
-    headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0"
-    headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8"
-    headers["Accept-Language"] = "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2"
-    headers["Accept-Encoding"] = "gzip, deflate, br"
+    headers["accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+    headers["accept-encoding"] = "gzip, deflate, br"
+    headers["accept-language"] = "zh-CN,zh;q=0.9"
+    headers["cache-control"] = "max-age=0"
+    headers["cookie"] = "XSRF-TOKEN=eyJpdiI6InVzeTcxTVVWSGdSV0FZWlhYcHJ2dnc9PSIsInZhbHVlIjoiTlNjcU1PSGNsQW45UzZkdFFMOTNvUlNRUnA2RDZJTVE5WFBtenpzVUNvck5pbEJuU2JDQ3dmT1FxUWhSbFBYbStGekUyMkJOWkd2ZUl3OE5oZzZkL05QRi9va3VQT2IveEh4TkhZckhUM3dqOEF5Tm9XOHNxUkllQUs5MzY2Tk8iLCJtYWMiOiJiMTU1Yzg5ZjRhNmJhOGY1NmQwNjk3NjU0YTY1Zjg3M2FjMTA4N2JmMTIxNjllNTQ5NzMyMGI2ZGRlMDhjY2Y2In0%3D; _session=QiRbQdkda23WsmkKar27jPbNEJxyPyu6sT83W1li; _ga=GA1.2.1909781615.1623072110; _gid=GA1.2.430553544.1623072110; _gat_UA-19089743-2=1; _gat_UA-19089743-3=1; trc_cookie_storage=taboola%2520global%253Auser-id%3Dcd0cb1ff-0f1f-40a3-a822-34776946f0c7-tuct7a540db; _cc_id=1d7df23098ca447f1626f1eb6565a938; panoramaId_expiry=1623676919500; panoramaId=924346e1a38521439fd01667f35e4945a702e31f147ee20eac516d362b81d68f"
+    headers["origin"] = "https://shindanmaker.com"
+    headers["referer"] = "https://shindanmaker.com/a/162207"
+    headers["user-agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
     headers["Content-Type"] = "application/x-www-form-urlencoded"
-    headers["Content-Length"] = "102"
-    headers["Origin"] = "https://shindanmaker.com"
-    headers["Connection"] = "keep-alive"
-    headers["Referer"] = f"https://shindanmaker.com/a/{qid}"
-    headers[
-        "Cookie"
-    ] = "XSRF-TOKEN=eyJpdiI6IlVkZXJNV1ZXNkpGWHVqVlRQZHAvckE9PSIsInZhbHVlIjoicmxTVnhoSE9UTE1LL3YwT0l2dGNCamVQU2hVNVhCeEhUS0RGSitLdWlkdG5TMFVKRHduMncvU1U4NTZuMnlyS2UwYWw5bmZjR05QZTNJZmVsTUdRdlNyN05uR2ZaUmQwZmRsRnZKc1NvVnVNdzNWZzY3a3BKeVlqVHVSMUROMFAiLCJtYWMiOiI4YTlhODBmZjc0NGFhNjNhNWFkZDFjZTRmNmFjODE2NmQ3N2JkYzQ1ZDc4ZjA5YjRjMDZiODAxZDk1NmNiMDkxIn0%3D; _session=5QhNu0DKq15EeKVFZLsbV45cw3DlSm0QfHypx6K6; _ga=GA1.2.225182219.1618683607; _gid=GA1.2.838180010.1618683607; name=eyJpdiI6ImxhMGFZNlZHb3RiakJ0bW9zZnRtb3c9PSIsInZhbHVlIjoiaXVIUHFKNHJmYk1GYzlYdG9EaVJYQnJiRHZlMTlKL3JoS3J6WkJaeDgxZ1BUV2VFeUtrZmZoSTByeE5xcDhwaEdzSHlJNVNWeXllT29PanRIbUp4dWc9PSIsIm1hYyI6IjljZmQwZTcyYzc5ZjRjZDg3YWM5NDFiYmEwOGU2NzU4NGUzNTMzNDZlNTQwZWRhYjhiNWNiOWYxOGM3MTU2YTUifQ%3D%3D; dui=eyJpdiI6IlFUTDdRZlRCcDdjZ0xRRzk3ZkFuYXc9PSIsInZhbHVlIjoiMStDOElQaWkxVXNkN3NPS0NPbHZkcitUMitvWW1yYmh3amRMNHBWTVpUVTVCSWF2RUQ3NkxHQ0pyWExvRWdvY3J2VDVid0F2MDlIRVVKSWVjZU1iSVlTdkg3KzB3U1NWeFF1UXMrek8ydFhSSmkxYVNtci9DRVE5OWlYanEzdFlnckgwQlJQSnZKQ1h2UUo5YXRtQ3p3PT0iLCJtYWMiOiI1OGU3YjMyMWY5ZTA4MjBjZTlmM2M0YzQwODhhMmY5ZTU4ZWM0MTc0OGFkYmI2YjVhZTlmMDA2Mzg3YWY4OWU5In0%3D; dsr=eyJpdiI6InM1cG11L2swUWxMUmFRYURodXQveVE9PSIsInZhbHVlIjoiWWhZb3daZUVIVHMyaVRZZ1FLem4wcFZHWHdGWWk4d00raXVIMGwwVjRodURKem1TTEpiS3Ryd2tPV25QdXJ2R3Y4UDlXc3ZQcmdmUjUwVWQ0RjNON0E9PSIsIm1hYyI6ImVjZWJjOTIzYjg5Y2Q2MzVjOTY2MzNkMjNkN2RiNGM2NzM2ZTVjNmRhNGVlOWJiODY2MThlZjg4OTg4YTk3NTgifQ%3D%3D; trc_cookie_storage=taboola%2520global%253Auser-id%3D5279da13-8125-43ec-a4d9-1adcb79ce929-tuct774ac5d; cto_bundle=C3o9Xl90M0hyaHdZT1J4eGs2T3J2dHlBREhab3pDU2N4VEJjb0FFZGFTcXk1VlAzRmZaJTJGdW5vMmxmWkhBaElPSmI2bVIwcWZ4UEdBTkRWSTQzOUJzcHBLSk5seW83RUclMkZkU0twSkJKNlAxVWZQcThEWnJNYmhuRXhWVlZhSTZCTDRxajZkSjlRZ3VsVUdpZEFqVlhURCUyRnhuMEElM0QlM0Q; _gat_UA-19089743-2=1; _gat_UA-19089743-3=1"
-    headers["Upgrade-Insecure-Requests"] = "1"
-    headers["TE"] = "Trailers"
     url = f"https://shindanmaker.com/{qid}"
     resp = requests.post(url, headers=headers, data=data, timeout=10)
     soup = BeautifulSoup(resp.content, "html.parser")
