@@ -14,7 +14,7 @@ shindanmaker在线测试
 
 sv = Service("shindan", bundle="娱乐", help_=sv_help)
 
-@sv.on_prefix("测一测", only_to_me=True)
+@sv.on_prefix("测一测")
 async def on_input_new(bot, ev, ):
     msg = ev.message.extract_plain_text().strip()
     sender = ev.sender
