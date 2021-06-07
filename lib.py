@@ -42,7 +42,7 @@ def get_data(qid, name):
     headers["cache-control"] = "max-age=0"
     headers["cookie"] = "XSRF-TOKEN=eyJpdiI6InVzeTcxTVVWSGdSV0FZWlhYcHJ2dnc9PSIsInZhbHVlIjoiTlNjcU1PSGNsQW45UzZkdFFMOTNvUlNRUnA2RDZJTVE5WFBtenpzVUNvck5pbEJuU2JDQ3dmT1FxUWhSbFBYbStGekUyMkJOWkd2ZUl3OE5oZzZkL05QRi9va3VQT2IveEh4TkhZckhUM3dqOEF5Tm9XOHNxUkllQUs5MzY2Tk8iLCJtYWMiOiJiMTU1Yzg5ZjRhNmJhOGY1NmQwNjk3NjU0YTY1Zjg3M2FjMTA4N2JmMTIxNjllNTQ5NzMyMGI2ZGRlMDhjY2Y2In0%3D; _session=QiRbQdkda23WsmkKar27jPbNEJxyPyu6sT83W1li; _ga=GA1.2.1909781615.1623072110; _gid=GA1.2.430553544.1623072110; _gat_UA-19089743-2=1; _gat_UA-19089743-3=1; trc_cookie_storage=taboola%2520global%253Auser-id%3Dcd0cb1ff-0f1f-40a3-a822-34776946f0c7-tuct7a540db; _cc_id=1d7df23098ca447f1626f1eb6565a938; panoramaId_expiry=1623676919500; panoramaId=924346e1a38521439fd01667f35e4945a702e31f147ee20eac516d362b81d68f"
     headers["origin"] = "https://shindanmaker.com"
-    headers["referer"] = "https://shindanmaker.com/a/162207"
+    headers["referer"] = f"https://shindanmaker.com/a/{qid}"
     headers["user-agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"
     headers["Content-Type"] = "application/x-www-form-urlencoded"
     url = f"https://shindanmaker.com/{qid}"
