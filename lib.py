@@ -33,7 +33,7 @@ def load_config():
 
 
 def get_data(qid, name):
-    dat = {"_token": "FBNybh2cb2nn83ogt0x4doW8gGJu7XLme6SKwN9t", "name": name, "hiddenName": "名無しのV"}
+    dat = {"_token": "CdLYBZx1qiFKhbuAT4pFAHkjgAOrQk94EseZYNLx", "name": name, "hiddenName": "名無しのV"}
     data = urlencode(dat)
     headers = CaseInsensitiveDict()
     headers["Host"] = "shindanmaker.com"
