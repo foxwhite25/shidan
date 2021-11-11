@@ -38,7 +38,7 @@ def get_data(qid, name):
     _session = r.cookies["_session"]
     bs = BeautifulSoup(r.content, "lxml")
     _token = bs.find("input", {"name": "_token"})["value"]
-    dat = {"_token": "CdLYBZx1qiFKhbuAT4pFAHkjgAOrQk94EseZYNLx", "name": name, "hiddenName": name}
+    dat = {"_token": _token, "name": name, "hiddenName": name}
     data = urlencode(dat)
     headers = CaseInsensitiveDict()
     headers["accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
