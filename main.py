@@ -39,7 +39,7 @@ async def on_input_new(bot, ev, ):
         text_list, b64s = get_data(qid_dict[msg], rn)
         result = str(text_list.replace(rn, name))
         for each in b64s:
-            text_list += f"[CQ:image,file={each}]\n"
+            result += f"[CQ:image,file={each}]\n"
         await bot.send(ev, result)
     elif msg[:4] == "热门测试":
         arr = []
