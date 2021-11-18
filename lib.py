@@ -136,8 +136,3 @@ def get_text(tag: bs4.Tag) -> str:
                 yield child.string
 
     return "".join(_get_text(tag))
-
-
-if __name__ == '__main__':
-    text, img = asyncio.run(get_hot(name="IDK"))
-    print(text)
