@@ -33,7 +33,7 @@ async def on_input_new(bot, ev, ):
     elif msg[:4] == "热门测试":
         top_index = int(msg[4:]) if msg[4:] else 0
         name, rn = await get_name(bot, ev, name)
-        text_list, b64s = await get_data(top_index, rn)
+        text_list, b64s = await get_hot(top_index, rn)
         result = str(text_list.replace(rn, name))
         for each in b64s:
             result += f"[CQ:image,file={each}]\n"
