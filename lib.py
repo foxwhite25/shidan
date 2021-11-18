@@ -1,5 +1,5 @@
 import asyncio
-from collections import Generator
+from collections.abc import Generator
 from typing import List, Callable, Dict
 import bs4
 from hoshino import aiorequests as requests
