@@ -7,7 +7,8 @@ date = False  # 是否令日期影响结果（测试结果每天不一样）
 
 sv_help = '''
 shindanmaker在线测试
-[（@bot）测一测] 为自己进行测试 后接at可帮他人测试~
+[测一测] 为自己进行测试 后接at可帮他人测试~
+[测一测 热门测试] 测试hot榜单
 [看看测一测列表] 查看当前启用的测试列表
 [添加测一测] 增加新的测一测关键词（管理限定）
 '''.strip()
@@ -16,7 +17,7 @@ sv = Service("shindan", bundle="娱乐", help_=sv_help)
 
 
 @sv.on_prefix("测一测")
-async def on_input_new(bot, ev, ):
+async def on_input_new(bot, ev):
     msg = ev.message.extract_plain_text().strip()
     sender = ev.sender
     name = sender["card"] or sender["nickname"]
